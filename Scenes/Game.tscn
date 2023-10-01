@@ -1,3 +1,557 @@
-[gd_scene format=3 uid="uid://diu01m3to76hj"]
+[gd_scene load_steps=34 format=3 uid="uid://diu01m3to76hj"]
+
+[ext_resource type="Texture2D" uid="uid://dh4qp52vq0ry2" path="res://Art/rooms.png" id="1_wrb6g"]
+[ext_resource type="Texture2D" uid="uid://uxbhsavtps1q" path="res://Art/player-character.png" id="2_ljvw3"]
+[ext_resource type="Texture2D" uid="uid://belfkbaxhor15" path="res://Art/door.png" id="2_p8510"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="3_nthx2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7ckn"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g70th"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(16, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q1o3"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1gbt"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(32, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwigr"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul57u"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(160, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfodt"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(144, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbqji"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(176, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ednrf"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(144, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30ro8"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(112, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm0k3"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(96, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kwag"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(128, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs57p"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(96, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3s32"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(64, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8i2u"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(48, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrw8d"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(80, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6m1bw"]
+atlas = ExtResource("2_ljvw3")
+region = Rect2(48, 0, 16, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jfnux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7ckn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g70th")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q1o3")
+}],
+"loop": false,
+"name": &"walk_down_1",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1gbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwigr")
+}],
+"loop": false,
+"name": &"walk_down_2",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul57u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfodt")
+}],
+"loop": false,
+"name": &"walk_left_1",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbqji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ednrf")
+}],
+"loop": false,
+"name": &"walk_left_2",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30ro8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm0k3")
+}],
+"loop": false,
+"name": &"walk_right_1",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kwag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs57p")
+}],
+"loop": false,
+"name": &"walk_right_2",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3s32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8i2u")
+}],
+"loop": false,
+"name": &"walk_up_1",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrw8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6m1bw")
+}],
+"loop": false,
+"name": &"walk_up_2",
+"speed": 4.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktl3i"]
+atlas = ExtResource("2_p8510")
+region = Rect2(0, 0, 12, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_denyq"]
+atlas = ExtResource("2_p8510")
+region = Rect2(12, 0, 12, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d44cy"]
+atlas = ExtResource("2_p8510")
+region = Rect2(0, 0, 12, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6hl3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktl3i")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_denyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d44cy")
+}],
+"loop": false,
+"name": &"open",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y20sv"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hi217"]
+size = Vector2(18, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52okx"]
+size = Vector2(16, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht48d"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwjym"]
+size = Vector2(16, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hqjv"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_innmt"]
+size = Vector2(16, 16)
 
 [node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(48, 0)
+zoom = Vector2(3, 3)
+
+[node name="Player" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-72, 78)
+sprite_frames = SubResource("SpriteFrames_jfnux")
+script = ExtResource("3_nthx2")
+
+[node name="RayCast2D" type="RayCast2D" parent="Player"]
+target_position = Vector2(-16, 0)
+collision_mask = 6
+collide_with_areas = true
+
+[node name="Front Room" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_wrb6g")
+region_enabled = true
+region_rect = Rect2(0, 0, 160, 176)
+
+[node name="Door" type="AnimatedSprite2D" parent="Front Room"]
+texture_filter = 1
+position = Vector2(19, -72)
+sprite_frames = SubResource("SpriteFrames_q6hl3")
+centered = false
+
+[node name="Interactables" type="Node" parent="Front Room"]
+
+[node name="Go to Back" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(-72, 96)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Go to Back"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Cash Register" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(-55, 32)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Cash Register"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Dishes" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(73, 48)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Dishes"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Trash Can" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(73, 64)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Trash Can"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Flavor 1" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(9, 32)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Flavor 1"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Flavor 2" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(25, 32)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Flavor 2"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Flavor 3" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(41, 32)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Flavor 3"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Flavor 4" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(57, 32)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Flavor 4"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Counter 1" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(-39, 32)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Counter 1"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Counter 2" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(-23, 32)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Counter 2"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Counter 3" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(-7, 32)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Counter 3"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Counter 4" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(-55, 80)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Counter 4"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Counter 5" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(57, 80)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Counter 5"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Topping 1" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(-39, 80)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Topping 1"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Topping 2" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(-23, 80)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Topping 2"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Topping 3" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(-7, 80)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Topping 3"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Topping 4" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(9, 80)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Topping 4"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Topping 5" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(25, 80)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Topping 5"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Topping 6" type="Area2D" parent="Front Room/Interactables" groups=["Interactable"]]
+position = Vector2(41, 80)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Interactables/Topping 6"]
+shape = SubResource("RectangleShape2D_y20sv")
+
+[node name="Walls" type="Node" parent="Front Room"]
+
+[node name="Wall 1" type="Area2D" parent="Front Room/Walls" groups=["Wall"]]
+position = Vector2(-72, 32)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Walls/Wall 1"]
+shape = SubResource("RectangleShape2D_hi217")
+
+[node name="Wall 2" type="Area2D" parent="Front Room/Walls" groups=["Wall"]]
+position = Vector2(-88, 64)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Room/Walls/Wall 2"]
+shape = SubResource("RectangleShape2D_52okx")
+
+[node name="Back Room" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 300)
+texture = ExtResource("1_wrb6g")
+region_enabled = true
+region_rect = Rect2(160, 0, 160, 176)
+
+[node name="Interactables" type="Node" parent="Back Room"]
+
+[node name="Go to Front" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(-72, 220)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Go to Front"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Counter 1" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(-56, 252)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Counter 1"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Counter 2" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(-40, 252)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Counter 2"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Counter 3" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(72, 252)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Counter 3"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Counter 4" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(-72, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Counter 4"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Counter 5" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(72, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Counter 5"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Flavor 1" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(-24, 252)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Flavor 1"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Flavor 2" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(-8, 252)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Flavor 2"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Flavor 3" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(8, 252)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Flavor 3"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Flavor 4" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(24, 252)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Flavor 4"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Flavor 5" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(40, 252)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Flavor 5"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Flavor 6" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(56, 252)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Flavor 6"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Topping 1" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(-56, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Topping 1"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Topping 2" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(-40, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Topping 2"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Topping 3" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(-24, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Topping 3"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Topping 4" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(-8, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Topping 4"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Topping 5" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(8, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Topping 5"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Topping 6" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(24, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Topping 6"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Topping 7" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(40, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Topping 7"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Topping 8" type="Area2D" parent="Back Room/Interactables" groups=["Interactable"]]
+position = Vector2(56, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Interactables/Topping 8"]
+shape = SubResource("RectangleShape2D_ht48d")
+
+[node name="Walls" type="Node" parent="Back Room"]
+
+[node name="Wall 1" type="Area2D" parent="Back Room/Walls" groups=["Wall"]]
+position = Vector2(-88, 260)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Walls/Wall 1"]
+shape = SubResource("RectangleShape2D_nwjym")
+
+[node name="Wall 2" type="Area2D" parent="Back Room/Walls" groups=["Wall"]]
+position = Vector2(88, 276)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Walls/Wall 2"]
+shape = SubResource("RectangleShape2D_5hqjv")
+
+[node name="Wall 3" type="Area2D" parent="Back Room/Walls" groups=["Wall"]]
+position = Vector2(-56, 236)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Room/Walls/Wall 3"]
+shape = SubResource("RectangleShape2D_innmt")
